@@ -40,7 +40,6 @@ const generateServiceFile =
       schema.runtime;
 
     service.methods
-      .filter((method) => method.methodKind === MethodKind.Unary)
       .forEach((method, index, filteredMethods) => {
         f.print(f.jsDoc(method));
         f.print(f.exportDecl("const", safeIdentifier(localName(method))), " = {");
